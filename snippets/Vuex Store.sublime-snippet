@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+import Vue from "vue";
+import Vuex from "vuex";
+import ${1:module} from "./modules/${1:module}";
+import * as getters from "./getters";
+import * as mutations from "./mutations";
+
+Vue.use(Vuex);
+
+export const store = new Vuex.Store({
+    state: {
+        ${2}
+    },
+    getters,
+    mutations,
+    modules: {
+        ${1:module}
+    }
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vuexstore</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

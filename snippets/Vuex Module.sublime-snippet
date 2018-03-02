@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+const state = {
+	${1:var}: 0
+};
+
+const getters = {
+	${1:var}: state => {
+	    return state.${1:var};
+	}
+};
+
+const mutations = {
+	${1:var}: (state, value) => {
+	    state.${1:var} = value;
+	}
+};
+
+export default {
+	state,
+	getters,
+	mutations
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vuexmodule</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

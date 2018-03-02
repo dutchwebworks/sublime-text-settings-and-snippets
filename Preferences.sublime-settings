@@ -1,0 +1,41 @@
+{
+	"auto_complete_delay": 50,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"detect_slow_plugins": false,
+	"expand_sidebar_on_startup": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"Thumbs.db",
+		"*.svg",
+		"*.css.map"
+	],
+	"folder_exclude_patterns":
+	[
+		"node_modules",
+		".sass-cache",
+		".svn",
+		".git",
+		".vs",
+		"aspnet_client"
+	],
+	"font_size": 15,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"itg_scrollbar_small": true,
+	"itg_small_tabs": true,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"material_theme_small_tab": true,
+	"overlay_scroll_bars": "enabled",
+	"scroll_past_end": true,
+	"tab_completion": true,
+	"theme": "Material-Theme.sublime-theme",
+	"use_simple_full_screen": true,
+	"word_wrap": "false",
+	"wrap_width": 9999
+}

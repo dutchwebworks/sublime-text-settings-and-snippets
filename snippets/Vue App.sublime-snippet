@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+var ${1:app-vue-name} = Vue.extend({
+	data: function() {
+		return {
+			${4}
+		}
+	},
+	created: function(){
+
+	},
+	mounted: function(){
+
+	},
+	methods: {
+
+	},
+	computed: {
+
+	}
+});
+
+<script>
+	var ${2:app-var-name} = new ${1:app-vue-name}({
+		data: {
+			
+		}
+	});
+
+	${2:app-var-name}.\$mount("#${3:mount-id}");
+</script>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vueapp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

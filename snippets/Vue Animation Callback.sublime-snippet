@@ -1,0 +1,51 @@
+<snippet>
+	<content><![CDATA[
+<transition 
+	name="${1:animationname}"
+	leave-to-class="${1:animationname}-leave-active"
+	v-on:after-leave="${4:callback}"
+	mode="out-in"
+	type="animation">
+
+	<div class="${3:classname}" v-show="${2:condition}">
+		<a href="#" v-on:click.prevent="${2:condition} = false"></a>
+	</div>
+</transition>
+
+.${3:classname} {
+	-webkit-animation: ${1:animationname}In .3s ease-out both;
+	animation: ${1:animationname}In .3s ease-out both;	
+}
+
+.${3:classname}.${1:animationname}-leave-active {
+	-webkit-animation: ${1:animationname}Out .3s ease-out both;		
+	animation: ${1:animationname}Out .3s ease-out both;		
+}
+
+@keyframes ${1:animationname}In {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes ${1:animationname}Out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vueanimationcallback</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

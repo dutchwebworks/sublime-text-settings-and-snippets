@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+Vue.filter("euroCurrency", function(price){
+	return Number(price).toLocaleString("nl-NL", { 
+		style: "currency",
+        currency: "EUR"
+	});
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vuefiltercurrency</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

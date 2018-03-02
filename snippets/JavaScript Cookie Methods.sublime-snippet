@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+// cookieName: '${1:acceptCookies}',
+// cookieAcceptedValue: 1,
+// cookieDeniedValue: 0,
+// cookieExpireInDays: 365,
+// cookieDomain: '.local.poort80.nl',
+// cookiePath: '/',
+// cookieDelay: 500,
+
+init: function() {
+	var acceptedCookie = parseInt(this.getCookie(settings.cookieName));
+
+	if(typeof(acceptedCookie !== undefined) && acceptedCookie != settings.cookieAcceptedValue) {
+		${2}
+	}
+},
+acceptCookies: function(){
+	this.setCookie(settings.cookieName, settings.cookieAcceptedValue, settings.cookieExpireInDays, settings.cookieDomain, settings.cookiePath);
+	return false;
+},
+denyCookies: function(){
+	this.setCookie(settings.cookieName, settings.cookieDeniedValue, settings.cookieExpireInDays, settings.cookieDomain, settings.cookiePath);
+	return false;
+},
+getCookie: function(cName) {
+	var name = cName + "=";
+	var ca = document.cookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length,c.length);
+		}
+	}
+	return "";
+},
+setCookie: function(cName, cValue, cExpire, cDomain, cPath) {
+	var d = new Date();
+	d.setTime(d.getTime() + (cExpire*24*60*60*1000));
+	var expires = "expires="+ d.toUTCString();
+	document.cookie = cName + "=" + cValue + ";" + cExpire + ";domain=" + cDomain + ";path=" + cPath;
+	return true;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jscookie</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

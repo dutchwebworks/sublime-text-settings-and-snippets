@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+# ${1:title}
+
+*By Dennis Burger, ${2:Poort80 Amsterdam}, ${3:february 2018}*
+
+## Prerequisites
+
+* [NodeJS](https://nodejs.org/en/)
+* [GruntJS](https://gruntjs.com)
+* [GulpJS](https://gulpjs.com)
+* [VueJS](https://vuejs.org)
+
+## ${5}
+
+## More resources
+
+* ${6}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mdreadme</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

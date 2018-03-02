@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+export const ${1:methodname} = (state, payload) => {
+	state.${2:varname} = payload;
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vuexmutation</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

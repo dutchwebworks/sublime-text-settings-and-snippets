@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+SET @fromDomainname = '${1:http://www.old-domain.nl}';
+SET @toDomainname = '${2:http://www.new-domain.nl}';
+-- SET @uploadPath = '/var/www/vhosts/poort80.nl/subdomains/pathe-blog/blog/wp-content/uploads';
+ 
+-- SET collation_connection = 'utf8mb4_unicode_ci';
+UPDATE `wp_options` SET `option_value`=(REPLACE(`option_value`,@fromDomainname,@toDomainname));
+UPDATE `wp_posts` SET `post_content`=(REPLACE(`post_content`,@fromDomainname,@toDomainname));
+UPDATE `wp_posts` SET `guid`=(REPLACE (`guid`,@fromDomainname,@toDomainname));
+UPDATE `wp_postmeta` SET `meta_value`=(REPLACE(`meta_value`,@fromDomainname,@toDomainname));
+UPDATE `wp_usermeta` SET `meta_value`=(REPLACE(`meta_value`,@fromDomainname,@toDomainname));
+UPDATE `wp_options` SET `option_value` = @uploadPath WHERE `option_name` = 'upload_path';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sqlreplace</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

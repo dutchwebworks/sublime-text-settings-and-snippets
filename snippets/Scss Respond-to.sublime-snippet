@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+@include respond-to-${1:min}('${2:keyword}'${4:, \$old-ie: false}) {
+	${5}
+}	
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>resp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

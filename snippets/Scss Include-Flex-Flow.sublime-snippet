@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+@include flex-flow(${1:row} ${2:wrap});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>incff</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+<script>
+	var cb = function() {
+		var l = document.createElement('link');
+		l.rel = 'stylesheet';
+		l.href = '${1:/path/to/regular.css}';
+		var h = document.getElementsByTagName('head')[0];
+		h.appendChild(l, h);
+	};
+
+	var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+
+	if (raf) {
+		raf(cb);
+	} else {
+		window.addEventListener('load', cb);
+	};
+</script>
+
+<noscript>
+	<link rel="stylesheet" href="${1:/path/to/regular.css}">
+</noscript>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jscsslazy</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

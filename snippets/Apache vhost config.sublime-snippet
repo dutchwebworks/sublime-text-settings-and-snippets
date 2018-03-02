@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+# Basic config for a Apache virtual-host
+<VirtualHost *:80>
+    ServerName ${1:folder-name}.local.${2:computer-name}.nl
+    DocumentRoot "${3:/Library/WebServer/vhosts}/${1:folder-name}.local.${2:computer-name}.nl/httpdocs"
+    
+    # Directory access
+	<Directory ${3:/Library/WebServer/vhosts}/${1:folder-name}.local.${2:computer-name}.nl/httpdocs>
+		Order allow,deny
+		Allow from all
+
+		AllowOverride All
+		Options +Includes
+		DirectoryIndex ${5:index.shtml}
+	</Directory>
+    
+    # Logging
+    ErrorLog "${4:/private/var/log}/apache2/${1:folder-name}.local.${2:computer-name}.nl-error_log"
+    CustomLog "${4:/private/var/log}/apache2/${1:folder-name}.local.${2:computer-name}.nl-access_log" common
+</VirtualHost>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>apachevhost</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

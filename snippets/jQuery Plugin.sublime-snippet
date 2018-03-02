@@ -1,0 +1,77 @@
+<snippet>
+	<content><![CDATA[
+/*
+	${1:pluginname}
+*/
+;(function(\$, window, undefined) {
+	\$.fn.${1:pluginname} = function(options) {	
+		var settings = \$.extend({
+			isActiveClass: 'is-active',
+			_stateIsOpen: false
+		}, options),
+		_that = \$(this);
+
+		var ${2:Plug} = {
+			init: function() {
+				this._bind();
+			},
+			_bind: function() {
+				\$(_that).on('click', function() { 
+					${2:Plug}.toggle.apply(this);	
+				});
+			},
+			toggle: function() {
+				if(typeof(settings.onToggle) === "function") { settings.onToggle(); }
+				return (settings._stateIsOpen) ? ${2:Plug}.close.apply(this) : ${2:Plug}.open.apply(this);
+			},
+			open: function() {
+				if(typeof(settings.onOpen) === "function") { settings.onOpen(); }
+				settings._stateIsOpen = true;
+				return false;
+			},
+			close: function() {
+				if(typeof(settings.onClose) === "function") { settings.onClose(); }
+				settings._stateIsOpen = false;
+				return false;
+			},
+			myFirstFunction: function(arg1, arg2) {
+				return arg1 + arg2;
+			},
+			externalCall: function() {
+				if(typeof(settings.onSubmit) === "function") {
+					var result = settings.onComplete();
+
+					if(result.success == true) {
+						// handle success
+					} else {
+						// handle error
+					}
+				}
+			}
+		}
+
+		${2:Plug}.init();
+		
+		// Make certain methods accessable from the outside
+		\$['${1:pluginname}'] = {
+			toggle: ${2:Plug}.toggle,
+			open: ${2:Plug}.open,
+			close: ${2:Plug}.close
+		};
+
+		//return this.each(function() {
+		//	\$(this).${4:html()};
+		//});
+
+		return this;
+	};
+}(jQuery, window));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jqplugin</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.javascript</scope> -->
+</snippet>
+
+
+

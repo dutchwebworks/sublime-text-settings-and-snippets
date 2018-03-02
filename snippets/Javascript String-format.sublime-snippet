@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+/* 	String formatter use 'placeholders' in strings with 'find-replace' features
+	myInputString: http://www.youtube.com/embed/{0}?rel={1}&enablejsapi=1
+	Usage: String.format(myInputString, 'w_33kdf87ekd', 'movies');
+	Return: http://www.youtube.com/embed/w_33kdf87ekd?rel=movies&enablejsapi=1
+	The {0} and {1} placeholder(s) in the string get respectively replaced by 'w_33kdf87ekd' 'movies' arguments
+================================================ */
+
+String.format = function() {
+	var s = arguments[0];
+	for (var i = 0; i < arguments.length - 1; i++) {       
+		var reg = new RegExp("\\{" + i + "\\}", "gm");             
+		s = s.replace(reg, arguments[i + 1]);
+	}
+	return s;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jsstringformat</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

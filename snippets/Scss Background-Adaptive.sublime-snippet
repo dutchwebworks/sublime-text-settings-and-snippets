@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+background-repeat: no-repeat;
+background-position: ${4:0 0};
+@include background-adaptive(${1:#{\$dir-img}}/${2:path/to/image}${3:, \$svg: true});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>backap</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

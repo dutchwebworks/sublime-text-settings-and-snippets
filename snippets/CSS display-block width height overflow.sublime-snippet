@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+display: ${1:inline-}block;
+width: ${2}px;
+height: ${3}px;
+${4:overflow: hidden;}
+${5:content: '';}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dbwh</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

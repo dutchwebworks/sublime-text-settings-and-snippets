@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+// ${1:myObject}
+
+var ${1:myObject} = {
+	// Var configs
+	container: '${2:#container}',
+	isActiveClass: 'is-active',
+	button1: '.btn1',
+	mqMobileViewport: '(max-width: 767px)', 			// Modernizr Css3 MediaQuery test viewport width, should match `_Config.scss` var `$mq-hor-breakpoint-04` - 1
+	_stateIsOpen: false,
+
+	// Methods
+	init: function() {
+		this._bind();
+	},
+	_bind: function() {
+		\$(${1:myObject}.button1).on('click', ${1:myObject}.${3:myFunction1});
+	},
+	toggle: function() {
+		return (settings._stateIsOpen) ? ${1:myObject}.close.apply(this) : ${1:myObject}.open.apply(this);
+	},
+	open: function() {
+		settings._stateIsOpen = true;
+		return false;
+	},
+	close: function() {
+		settings._stateIsOpen = false;
+		return false;
+	},	
+	${3:myFunction1}: function() {
+		${5}\$('body').addClass(${1:myObject}.isActiveClass);
+		return false;
+	},
+	ifMobileViewport: function() {
+		// Check with Modernizr lib. if webbrowser viewport is small (mobile)
+		return Modernizr.mq(${1:myObject}.mqMobileViewport);
+	}
+};
+
+(function (\$) {
+	// Execute init method of above object on page load
+	${1:myObject}.init();
+})(jQuery);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jsobject</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

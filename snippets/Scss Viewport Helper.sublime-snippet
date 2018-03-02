@@ -1,0 +1,50 @@
+<snippet>
+	<content><![CDATA[
+// Responsive-web-design breakpoint helper
+
+body {
+	&:before {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 99999;
+		display: block;
+		overflow: hidden;
+		padding: 5px;
+		content: "Tiny < 320";
+		color: #333;
+		background-color: #eee;
+		border-radius: 0 0 5px 0;
+		border-width: 0;
+		border-style: solid;
+		border-right-width: 1px;
+		border-bottom-width: 1px;
+		border-color: #ddd;
+
+		@include respond-to-min("small", $old-ie: false) {
+			content: "Small > 320px";
+		}	
+		
+		@include respond-to-min("medium", $old-ie: false) {
+			content: "Medium > 480px";
+		}	
+		
+		@include respond-to-min("regular", $old-ie: false) {
+			content: "Regular > 600px";
+		}	
+		
+		@include respond-to-min("large", $old-ie: false) {
+			content: "Large > 768px";
+		}	
+		
+		@include respond-to-min("huge", $old-ie: false) {
+			content: "Huge > 1024px";
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>scssviewporthelper</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
