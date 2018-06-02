@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+{
+  "name": "${1:project-name}",
+  "version": "${2:1.0.0}",
+  "description": "Grunt Sass compilation for ${1:project-name}",
+  "keywords": [
+    "scss",
+    "css"${3}
+  ],
+  "author": "Dennis Burger <dennis.burger@poort80.nl>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^2.1.0",
+    "load-grunt-tasks": "^4.0.0"
+  }
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gruntsasspackagejson</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

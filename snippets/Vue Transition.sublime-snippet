@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+<transition name="${1:classname}" mode="${2:out-in}" type="${3:animation | transition}">
+	${5}
+</transition>
+
+.${1:classname}-enter-active {
+	animation: ${4:animationname}In .3s ease-out forwards;
+}
+
+.${1:classname}-leave-active {
+	animation: ${4:animationname}Out .3s ease-out forwards;		
+}
+
+@keyframes ${4:animationname}In {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes ${4:animationname}Out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>vuetransition</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

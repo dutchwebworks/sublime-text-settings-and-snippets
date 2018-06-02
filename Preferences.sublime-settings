@@ -18,9 +18,10 @@
 		".svn",
 		".git",
 		".vs",
+		".vagrant",
 		"aspnet_client"
 	],
-	"font_size": 15,
+	"font_size": 16,
 	"highlight_line": true,
 	"ignored_packages":
 	[

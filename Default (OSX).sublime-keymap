@@ -35,6 +35,50 @@
 		 }
 	},
 	{ 
-		"keys": ["super+shift+r"], "command": "reveal_in_side_bar"
-	}
+		"keys": ["shift+super+r"], "command": "reveal_in_side_bar"
+	},
+	{
+	    "keys": [
+	        "shift+super+g"
+	    ], 
+	    "command": "wrap_as_you_type", 
+	    "context": [
+	        {
+	            "operand": false, 
+	            "operator": "equal", 
+	            "match_all": true, 
+	            "key": "setting.is_widget"
+	        }
+	    ]
+	},
+	{
+	    "keys": [
+	        "shift+super+'"
+	    ], 
+	    "command": "rename_tag", 
+	    "context": [
+	        {
+	            "key": "emmet_action_enabled.rename_tag"
+	        }
+	    ]
+	},
+	{
+        "keys": [
+            "shift+super+;"
+        ], 
+        "args": {
+            "action": "remove_tag"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "key": "emmet_action_enabled.remove_tag"
+            }
+        ]
+    },
+    { "keys": ["f2"], "command": "next_bookmark" },
+    { "keys": ["shift+f2"], "command": "prev_bookmark" },
+    { "keys": ["super+f2"], "command": "toggle_bookmark" },
+    { "keys": ["super+shift+f2"], "command": "clear_bookmarks" },
+    { "keys": ["alt+f3"], "command": "find_all_under" },
 ]

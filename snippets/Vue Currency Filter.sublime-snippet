@@ -1,23 +1,14 @@
 <snippet>
 	<content><![CDATA[
-<script>
-	export default {
-		components: {
-			
-		},
-		data() {
-			return {
-				${1}
-			}
-		},
-		methods: {
-
-		}
-	};
-</script>
+Vue.filter("euroCurrency", function(price){
+	return Number(price).toLocaleString("nl-NL", { 
+		style: "currency",
+        currency: "EUR"
+	});
+});
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>vuescriptexport</tabTrigger>
+	<tabTrigger>vuecurrency</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
